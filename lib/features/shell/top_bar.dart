@@ -19,8 +19,8 @@ class TopBar extends StatelessWidget {
 
   static const _nav = [
     ('widgets', 'Widgets', '/widgets/button'),
-    ('patterns', 'Patterns', '/patterns/login'),
-    ('docs', 'Documentation', '/docs/start'),
+    // ('patterns', 'Patterns', '/patterns/login'),
+    // ('docs', 'Documentation', '/docs/start'),
   ];
 
   @override
@@ -29,8 +29,8 @@ class TopBar extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      height: 56,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      // height: 56,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
         color: t.surface,
         border: Border(bottom: BorderSide(color: t.border)),
@@ -43,11 +43,21 @@ class TopBar extends StatelessWidget {
               icon: Icon(Icons.menu, color: t.text),
             ),
           _brand(t),
-          const Spacer(),
-          if (wide) ...[
-            for (final item in _nav) _navButton(context, t, item),
-            const SizedBox(width: 8),
-          ],
+          // const Spacer(),
+          ///TODO:
+          // if (wide) ...[
+          //   for (final item in _nav) _navButton(context, t, item),
+          //   const SizedBox(width: 8),
+          // ],
+          Expanded(
+            child: Wrap(
+              spacing: 8, runSpacing: 8,
+              alignment: WrapAlignment.center,
+              children: [
+                for (final item in _nav) _navButton(context, t, item),
+              ],
+            ),
+          ),
           IconButton(
             tooltip: 'Toggle theme',
             onPressed: () => context.read<ThemeCubit>().toggle(),
