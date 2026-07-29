@@ -13,7 +13,7 @@ import 'doc_entry.dart';
 
 ///the catalog (single source of truth)
 class Registry {
-  static final List<ComponentEntry> widgets = [_button, _tab];
+  static final List<ComponentEntry> widgets = [_button, _tab, _calendar];
   static final List<ComponentEntry> patterns = [_login, _otp, _loading];
   static final List<DocEntry> docs = [_gettingStarted, _theming, _usingGallery];
 

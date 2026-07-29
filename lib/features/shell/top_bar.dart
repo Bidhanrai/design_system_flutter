@@ -19,8 +19,8 @@ class TopBar extends StatelessWidget {
 
   static const _nav = [
     ('widgets', 'Widgets', '/widgets/button'),
-    // ('patterns', 'Patterns', '/patterns/login'),
-    // ('docs', 'Documentation', '/docs/start'),
+    ('patterns', 'Patterns', '/patterns/login'),
+    ('docs', 'Documentation', '/docs/start'),
   ];
 
   @override
